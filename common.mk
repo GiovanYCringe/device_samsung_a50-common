@@ -133,7 +133,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.recovery.usb.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.usb.rc \
     $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
     $(COMMON_PATH)/configs/init/init.udfps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.udfps.rc \
-    $(COMMON_PATH)/configs/init/ueventd.$(TARGET_SOC_NUMBER).rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+    $(COMMON_PATH)/configs/init/ueventd.$(TARGET_SOC_NUMBER).rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
