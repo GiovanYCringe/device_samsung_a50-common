@@ -137,7 +137,12 @@ VENDOR_SECURITY_PATCH := 2022-10-01
 
 ## SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-include device/lineage/sepolicy/exynos/sepolicy.mk
+ROM_SPECIFIC_SEPOLICY_MK := $(shell ls device/*/sepolicy/exynos/sepolicy.mk)
+ifneq ($(ROM_SPECIFIC_SEPOLICY_MK),)
+include $(ROM_SPECIFIC_SEPOLICY_MK)
+else
+$(warning ROM specific sepolicy not found)
+endif
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
