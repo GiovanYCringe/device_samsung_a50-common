@@ -362,6 +362,13 @@
          and on the navigation bar and disabled for all other devices. -->
     <bool name="config_statusBarBurnInProtection">true</bool>
 
+    <!-- Indicate whether to allow the device to suspend when the screen is off
+         due to the proximity sensor.  This resource should only be set to true
+         if the sensor HAL correctly handles the proximity sensor as a wake-up source.
+         Otherwise, the device may fail to wake out of suspend reliably.
+         The default is false. -->
+    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+    
     <!-- Minimum screen brightness that can be set to the display -->    
     <integer name="config_screenBrightnessSettingMinimum">1</integer>
 
