@@ -13,13 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-COMMON_PATH := device/samsung/universal9611-common
+COMMON_PATH := device/samsung/a50-common
 
 ## Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 ## Inherit proprietary vendor configuartion
-include vendor/samsung/universal9611-common/BoardConfigVendor.mk
+include vendor/samsung/a50-common/BoardConfigVendor.mk
 
 ## Architecture
 TARGET_ARCH := arm64
@@ -76,14 +76,17 @@ TARGET_USES_VULKAN := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/$(TARGET_DEVICE).cfg
 
-## DTB
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_CUSTOM_DTBIMG_MK := $(COMMON_PATH)/mkdtbimg.mk
+## Filesystem
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_PRODUCT := system/product
+TARGET_COPY_OUT_SYSTEM := system
+TARGET_COPY_OUT_VENDOR := vendor
+TARGET_USERIMAGES_USE_EXT4 := true
 
-# Fingerprint
-TARGET_SEC_FP_REQUEST_FORCE_CALIBRATE := true
 # FOD
-TARGET_SURFACEFLINGER_UDFPS_LIB := //$(COMMON_PATH):libudfps_extension.universal9611
+TARGET_SURFACEFLINGER_UDFPS_LIB := //$(COMMON_PATH):libudfps_extension.a50
 
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x400000000LL
@@ -91,6 +94,8 @@ TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x400000000LL
 ## Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_SOURCE := kernel/samsung/a50-common
+TARGET_KERNEL_CONFIG := a50_defconfig
 
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
@@ -107,21 +112,22 @@ ODM_MANIFEST_HCESIMESE_FILES := $(ODM_MANIFEST_NFC_FILE)
 ODM_MANIFEST_DISABLED_FILES := $(COMMON_PATH)/configs/nfc/odm_nfc_manifest_disabled.xml
 
 ## Partitions
+BOARD_BOOTIMAGE_PARTITION_SIZE := 57671680
+BOARD_CACHEIMAGE_PARTITION_SIZE := 419430400
+BOARD_DTBIMG_PARTITION_SIZE := 8388608
+BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_FLASH_BLOCK_SIZE := 4096
-BOARD_USES_METADATA_PARTITION := true
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67633152
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 5557452800
+BOARD_VENDORIMAGE_PARTITION_SIZE := 838860800
+
 BOARD_ROOT_EXTRA_FOLDERS := efs
 
 ## Platform
 BOARD_VENDOR := samsung
-TARGET_BOARD_PLATFORM := universal9611
-TARGET_BOOTLOADER_BOARD_NAME := exynos9611
-TARGET_SOC := exynos9611
-
-## CAMERA
-SOONG_CONFIG_NAMESPACES += exynos9611DeviceVars
-SOONG_CONFIG_exynos9611DeviceVars += \
-    model
-SOONG_CONFIG_exynos9611DeviceVars_model := $(TARGET_DEVICE)
+TARGET_BOARD_PLATFORM := universal9610
+TARGET_BOOTLOADER_BOARD_NAME := exynos9610
+TARGET_SOC := exynos9610
 
 ## Properties
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
@@ -129,7 +135,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 ## Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9611
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9610
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 
 ## Releasetools
@@ -144,12 +150,7 @@ VENDOR_SECURITY_PATCH := 2022-10-01
 
 ## SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-ROM_SPECIFIC_SEPOLICY_MK := $(shell ls device/*/sepolicy/exynos/sepolicy.mk)
-ifneq ($(ROM_SPECIFIC_SEPOLICY_MK),)
-include $(ROM_SPECIFIC_SEPOLICY_MK)
-else
-$(warning ROM specific sepolicy not found)
-endif
+include device/custom/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
