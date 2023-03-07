@@ -15,9 +15,8 @@
  * limitations under the License.
 */
 -->
-
+<resources>
     <!-- Starting padding for a left-aligned quick status bar clock -->
     <dimen name="status_bar_left_clock_starting_padding">0dp</dimen>
-<resources>
     <dimen name="rounded_corner_content_padding">20dp</dimen>
 </resources>
