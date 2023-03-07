@@ -38,9 +38,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 ## Bluetooth
 BOARD_HAVE_BLUETOOTH_SLSI := true
 
-## Board
-TARGET_BOARD_INFO_FILE := $(COMMON_PATH)/board-info.txt
-
 ## Boot Image
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_CUSTOM_BOOTIMG := true
