@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:fingerprint/android.hardware.biometrics.fingerprint@2.3-service-samsung.universal9611.rc
-service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.3-service-samsung.universal9611
-========
 service vendor.fps_hal /vendor/bin/hw/vendor.samsung.hardware.biometrics.fingerprint@3.0-service.a50
->>>>>>>> parent of ef1368d (universal9611: Initial bringup):fingerprint/vendor.samsung.hardware.biometrics.fingerprint@3.0-service.a50.rc
     # "class hal" causes a race condition on some devices due to files created
     # in /data. As a workaround, postpone startup until later in boot once
     # /data is mounted.
