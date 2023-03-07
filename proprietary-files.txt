@@ -96,15 +96,12 @@ vendor/firmware/kernel_bin_inception.bin
 vendor/firmware/kernel_bin_mfb.bin
 vendor/firmware/kernel_bin_mobile_vgg.bin
 vendor/firmware/kernel_bin_nfd.bin
-vendor/firmware/setfile_4ha.bin
-vendor/firmware/setfile_2x5.bin
-vendor/firmware/setfile_imx576.bin
-vendor/firmware/Tfa9872.cnt
-vendor/firmware/tfadsp.bin
-vendor/firmware/WithLightFixNoBN.SDNNmodel
-vendor/firmware/default_configuration.hfd.cfg.json
-vendor/firmware/tracker_cfg.json
-vendor/firmware/pp_cfg.json
+vendor/firmware/nfc/libpn553_fw.so
+vendor/firmware/param_ti.bin
+vendor/firmware/rtdsp.bin
+vendor/firmware/rtdsp_param.bin
+vendor/firmware/SoundBoosterParam.bin
+vendor/firmware/spkamp.bin
 
 ## Gatekeeper
 vendor/lib/hw/gatekeeper.exynos9610.so
@@ -269,3 +266,10 @@ vendor/etc/wifi/mx140_wlan_t.hcf
 vendor/etc/wifi/mx140_wlan_t_sw.hcf
 vendor/etc/wifi/platform.txt
 vendor/etc/wifi/slsi_reg_database.bin
+vendor/etc/wifi/wpa_supplicant.conf
+vendor/etc/wifi/wpa_supplicant_overlay.conf
+
+## GNSS CFG
+vendor/etc/gnss/ca.pem
+vendor/etc/gnss/gps.cfg
+vendor/etc/gnss/gps.debug.cfg
