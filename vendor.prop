@@ -40,10 +40,7 @@ ro.surface_flinger.use_color_management=true
 
 ## Samsung specific
 ro.product_ship=true
-ro.vendor.sec.radio.def_network=9
-ro.debug_level=0x494d
-ro.hardware.chipname=exynos9611
-ro.build.PDA=A515FXXU5GVK6
+ro.hardware.chipname=exynos9610
 
 # Set csc support in OMX
 # If not set or set to 0, OMX will only use BT.601 colorspace.
@@ -58,7 +55,7 @@ ro.csc.sales_code=ROM
 
 ## SoC
 ro.soc.manufacturer=Samsung
-ro.soc.model=Exynos 9611
+ro.soc.model=Exynos 9610
 
 ## Wi-Fi
 wifi.direct.interface=p2p0

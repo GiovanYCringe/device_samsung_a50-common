@@ -124,7 +124,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.incremental.enable=yes
 
-TARGET_SOC_NUMBER := exynos9611
+TARGET_SOC_NUMBER := exynos9610
 
 # init
 PRODUCT_COPY_FILES += \

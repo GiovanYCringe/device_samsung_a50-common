@@ -46,6 +46,6 @@ Value *VerifyBootloader(const char *name, State *state,
   return StringValue(std::to_string(ret));
 }
 
-void Register_librecovery_updater_exynos9611() {
-  RegisterFunction("exynos9611.verify_bootloader_min", VerifyBootloader);
+void Register_librecovery_updater_exynos9610() {
+  RegisterFunction("exynos9610.verify_bootloader_min", VerifyBootloader);
 }

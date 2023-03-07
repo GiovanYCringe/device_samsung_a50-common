@@ -130,7 +130,7 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9610
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 
 ## Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_exynos9611
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_exynos9610
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 ## RIL
