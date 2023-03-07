@@ -41,7 +41,7 @@ BOARD_HAVE_BLUETOOTH_SLSI := true
 
 ## Boot Image
 BOARD_BOOTIMG_HEADER_VERSION := 1
-BOARD_CUSTOM_BOOTIMG := true
+BOARD_lineage_BOOTIMG := true
 BOARD_DTB_OFFSET := 0x00000000
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -65,6 +65,7 @@ SELINUX_IGNORE_NEVERALLOWS := true
 ## Display
 TARGET_SCREEN_DENSITY := 420
 TARGET_USES_VULKAN := true
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x400000000LL
 
 ## DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -83,8 +84,10 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_SOURCE := kernel/samsung/a50-common
+TARGET_KERNEL_SOURCE := kernel/samsung/a50
 TARGET_KERNEL_CONFIG := a50_defconfig
+TARGET_KERNEL_CLANG_VERSION := proton
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/proton-clang
 
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
@@ -132,7 +135,7 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 ## SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-include device/custom/sepolicy/exynos/sepolicy.mk
+include device/lineage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
