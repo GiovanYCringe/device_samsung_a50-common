@@ -1,4 +1,4 @@
-#
+	#
 # Copyright (C) 2020-2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -128,12 +128,11 @@ TARGET_SOC_NUMBER := exynos9611
 
 # init
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/fstab.$(TARGET_SOC_NUMBER):$(TARGET_COPY_OUT_RAMDISK)/fstab.$(TARGET_SOC_NUMBER) \
-    $(COMMON_PATH)/configs/init/fstab.$(TARGET_SOC_NUMBER):$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(TARGET_SOC_NUMBER) \
-    $(COMMON_PATH)/configs/init/init.$(TARGET_SOC_NUMBER).rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(TARGET_SOC_NUMBER).rc \
-    $(COMMON_PATH)/configs/init/init.$(TARGET_SOC_NUMBER).usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(TARGET_SOC_NUMBER).usb.rc \
-    $(COMMON_PATH)/configs/init/init.recovery.exynos9610.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.$(TARGET_SOC_NUMBER).rc \
-    $(COMMON_PATH)/configs/init/init.recovery.usb.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.usb.rc \
+    $(COMMON_PATH)/configs/init/fstab.exynos9610:$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos9610 \
+    $(COMMON_PATH)/configs/init/fstab.exynos9610:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos9610 \
+    $(COMMON_PATH)/configs/init/init.exynos9610.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos9610.rc \
+    $(COMMON_PATH)/configs/init/init.exynos9610.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos9610.usb.rc \
+    $(COMMON_PATH)/configs/init/init.recovery.exynos9610.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos9610.rc \
     $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
     $(COMMON_PATH)/configs/init/ueventd.$(TARGET_SOC_NUMBER).rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
